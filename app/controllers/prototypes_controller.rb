@@ -1,5 +1,5 @@
 class PrototypesController < ApplicationController
-  before_action :set_prototype, only: :show
+  before_action :set_prototype, only: [:show, :edit, :destroy, :update]
 
   def index
     @prototypes = Prototype.all
@@ -21,6 +21,20 @@ class PrototypesController < ApplicationController
 
   def show
   end
+
+  def edit
+  end
+
+  def destroy
+    @prototype.destroy if @prototype.user_id == current_user.id
+    redirect_to :root, notice: 'Prototype was successfully deleted'
+  end
+
+  def update
+    @prototype.update(prototype_params) if @prototype.user_id == current_user.id
+    redirect_to :root, notice: 'Prototype was successfully update'
+  end
+
 
   private
 
