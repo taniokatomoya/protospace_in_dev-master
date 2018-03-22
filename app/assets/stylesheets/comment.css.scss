@@ -1,0 +1,31 @@
+.comment{
+  width: 100vh;
+  height: 100px;
+  display: flex;
+  .left-content{
+    width: 100px;
+  }
+  .right-content{
+    &__name{
+      display: block;
+      font-family: inherit;
+      font-weight: 500;
+      line-height: 1.1;
+      color: inherit;
+      font-size: 18px;
+      font-weight: bold;
+      -webkit-margin-before: 1.33em;
+      -webkit-margin-after: 1.33em;
+      -webkit-margin-start: 0px;
+      -webkit-margin-end: 0px;
+    }
+    &__text{
+      display: block;
+      -webkit-margin-before: 1.33em;
+      -webkit-margin-after: 1.33em;
+      -webkit-margin-start: 0px;
+      -webkit-margin-end: 0px;
+      font-weight: bold;
+    }
+  }
+}
