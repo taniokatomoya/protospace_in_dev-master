@@ -42,3 +42,14 @@
           %a{href: "#", class: "btn btn-default"} iPad
         %li
           %a{href: "#", class: "btn btn-default"} wireframe
+    .col-md-3{"id" => "comments_list"}
+      %h4 Comments
+      = render partial: 'comment', collection: @comments
+
+    .col-md-6
+      - if current_user
+        %h4 Write a comments
+        = form_for [@prototype, @comment], id: "new_comment" do |f|
+          = f.text_field :comment, class: 'comment', placeholder: 'Your comments'
+          = f.submit 'COMMENT', class: 'submit'
+
