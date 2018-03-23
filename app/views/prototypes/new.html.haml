@@ -32,5 +32,13 @@
         .col-md-12
           %h4 Concept
           = f.text_area :concept, required: true, placeholder: "Input Concept"
+        .col-md-12{id: "toukouform"}
+          %h4 tag
+          %h4.sakujo
+            %a タグ一括削除
+          .taglists
+          = f.text_field :concept, placeholder: "tag", required: true, id: "tag", name: "tag"
       .row.text-center.proto-btn
         = f.submit "PUBLISH", id: "button", class: "btn btn-lg btn-primary btn-block"
+
+
