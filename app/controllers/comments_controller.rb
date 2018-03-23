@@ -14,6 +14,9 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @comment.destroy if @comment.user.id = current_user.id
     redirect_to prototype_path(@prototype)
+    # respond_to do |format|
+    #   format.html {redirect_to prototype_path(params[:prototype_id])}
+    #   format.json
   end
 
   private
