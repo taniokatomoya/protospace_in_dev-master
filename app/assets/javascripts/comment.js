@@ -41,12 +41,20 @@ $(document).on('turbolinks:load', function() {
     .done(function(json){
       console.log(json);
       var html = buildHTML(json);
-      $('#comment_comment').val("")
-      $('#comments_list').append(html)
-      $("#comments_list").scrollTop($("#comments_list")[0].scrollHeight)
+      $('#comment_comment').val("");
+      $('#comments_list').append(html);
+      $("html,body").animate({scrollTop: $('.comment:last').offset().top}, 'swing');
     })
     .fail(function(){
       alert('error');
     })
-  })
+  });
+  // $('.delete_button').on("click", function(e){
+  //   e.preventDefault();
+  //   console.log(this);
+  //   $(this).parent().remove();
+  // });
+  // $('.delete_button').on('click', function(e){
+  //   e.preventDefault();
+  //   console.log(this);
 });

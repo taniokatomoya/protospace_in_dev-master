@@ -46,7 +46,7 @@
       %h4 Comments
       = render partial: 'comment', collection: @comments
 
-    .col-md-6
+    .col-md-6{id: "comment_form"}
       - if current_user
         %h4 Write a comments
         = form_for [@prototype, @comment], id: "new_comment" do |f|
