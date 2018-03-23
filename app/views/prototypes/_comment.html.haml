@@ -1,0 +1,16 @@
+.comment{"data-comment-id" => comment.id}
+  .left-content
+    %a{:href => "/users/#{comment.user.id}"}
+      - if comment.user.avatar.presence
+        %img.media-object{alt: "64x64", "data-holder": "{\"rendered\":\"true\"}", "data-src": "holder.js/64x64", src: "#{comment.user.avatar.url}", style: "width: 64px; height: 64px;"}
+        .delete_button
+          = link_to 'delete', "/prototypes/#{comment.prototype.id}/comments/#{comment.id}", method: :delete
+      - else
+        %img.media-object{alt: "64x64", "data-holder": "{\"rendered\":\"true\"}", "data-src": "holder.js/64x64", src: "", style: "width: 64px; height: 64px;"}
+        .delete_button
+          = link_to 'delete', "/prototypes/#{comment.prototype.id}/comments/#{comment.id}", method: :delete
+  .right-content
+    .right-content__name
+      = link_to comment.user.name, "/users/#{comment.user_id}"
+    .right-content__text
+      = comment.comment
